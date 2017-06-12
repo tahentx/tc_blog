@@ -1,5 +1,14 @@
-class User
+class Users
+	has_many :articles
+	
+	protected
 
-# devise :omniauthable, omniauth_providers: [:google_oauth2]
+	def self.create_user(auth_hash)
+    User.create(
+    username: auth_hash.info.nickname,
+    token: auth_hash.credentials.token,
+    secret: auth_hash.credentials.secret
+    )
+  	end
 
 end

@@ -1,13 +1,17 @@
-class SessionsController < ApplicationsController
+class SessionsController < ApplicationController
 
 	def create
-	  session[:current_user_id] = @user.id
+	  session[:current_user_id] = @current_user.id
 	end
 
 	def new
 		if current_user
 			redirect_to '/articles'
 		end
+	end
+
+	def google
+		binding.pry
 	end
 
 	def failure
