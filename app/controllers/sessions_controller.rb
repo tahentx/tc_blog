@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
 
 	def new
 		if current_user
-			redirect_to '/articles'
+			redirect_to articles_path
 		end
 	end
 
 	def google
-		binding.pry
+		# binding.pry
 	end
 
 	def failure
