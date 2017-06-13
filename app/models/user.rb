@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	# has_many :articles
+	before_create :create_uuid
 	
 	protected
 
@@ -8,6 +8,14 @@ class User < ApplicationRecord
     username: auth_hash.info.email
     )
   	end
+
+  	private
+
+	def create_uuid
+	    begin
+	      self.uuid = SecureRandom.uuid
+	    end while self.class.exists?(:uuid => uuid)
+    end
 
 end
  
