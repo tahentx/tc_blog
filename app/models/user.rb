@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	before_create :create_uuid
-	
+	has_many :articles, dependent: :destroy
+
 	protected
 
 	def self.create_user(auth_hash)

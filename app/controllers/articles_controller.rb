@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     end
 
 	def show
-	    @article = Article.find(params[:id])
+	    @article = Article.find_by(uuid: params[:id]) 
   	end
 	
 	def new 
