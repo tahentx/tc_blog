@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: "users#create"
 
   get '/login', to: "sessions#new"
-  get '/logout', to: "sessions#destroy"
+  delete '/logout', to: "sessions#destroy"
 
 
 end
