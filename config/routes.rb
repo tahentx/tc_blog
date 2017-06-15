@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: "users#create"
 
   get '/login', to: "sessions#new"
+  get '/logout', to: "sessions#destroy"
 
-  # get '/auth/twitter/callback', to: "users#create"
-  # get '/logout', to: "sessions#destroy", as: "logout"
-  # get '/auth/failure', to: "sessions#failure"
+
 end
 
