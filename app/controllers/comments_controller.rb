@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.find_by(uuid: params[:id])
-    @comment = @article.comments.create(comment_params).valid?
+    @article.create(comment_params).valid?
     redirect_to article_path(@article.uuid)
   end
 

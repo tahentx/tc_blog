@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
 	def create
-	  session[:current_user_id] = @current_user.id
+	  session[:user_id] = @current_user.id
 	  if current_user
 	  	redirect_to articles_path
 	  end
